@@ -7,12 +7,16 @@ module.exports = {
   ],
   module: {
     loaders: [
+      {test: /\.jsx$/, loader: 'babel-loader' /*...*/},
       { test: /\.js?$/, loader: 'babel-loader', exclude: /node_modules/ },
-      { test: /\.s?css$/, loader: 'style-loader!css-loader!sass-loader' },
+      { test: /\.scss$/, loader: 'style-loader!css-loader!sass-loader' },
+      { test: /\.css$/, loader: "style-loader!css-loader" },
+
+      
     ]
   },
   resolve: {
-    extensions: ['.js','.scss']
+    extensions: ['.js', '.jsx', '.scss']
   },
   output: {
     path: path.join(__dirname, '/dist'),
